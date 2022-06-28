@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+
+.App{
+   font-family: 'Dosis', sans-serif;
+   position: relative;
+   width: 90%;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+
+
+@media (max-width: 1119.98px) { 
+    *{
+        font-size: 20px;
+    }
+    .App{
+        width:100%
+    }
+}
+
