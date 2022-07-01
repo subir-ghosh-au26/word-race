@@ -8,7 +8,7 @@ const Leaderboard = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/stats")
+    fetch("https://word-race-backend.herokuapp.com/api/stats")
       .then((res) => res.json())
       .then((data) => {
         setStats(data);
@@ -33,17 +33,17 @@ const Leaderboard = () => {
           </tr>
         </thead>
         <tbody>
-          {stats?.map((stats, index) => {
+          {stats?.map((stat, index) => {
             return (
-              <tr key={stats.id}>
+              <tr key={stat._id}>
                 <td>{index + 1}</td>
                 <td>
-                  <Link to={`/user-stats/${stats.users.id}`}>
-                    {stats.users.name}
+                  <Link to={`/user-stats/${stat.user._id}`}>
+                    {stat.user.name}
                   </Link>
                 </td>
-                <td>{stats.score}</td>
-                <td>{stats.level}</td>
+                <td>{stat.score}</td>
+                <td>{stat.level}</td>
               </tr>
             );
           })}
